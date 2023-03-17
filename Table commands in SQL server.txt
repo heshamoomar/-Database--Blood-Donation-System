@@ -1,0 +1,85 @@
+CREATE TABLE [Donation_Center] (
+  [Donation_center_ID] int,
+  [Location] varchar(50),
+  [E-mail] varchar(50),
+  [Phone] varchar(10),
+  [Website] varchar(50),
+  PRIMARY KEY ([Donation_center_ID])
+);
+
+CREATE TABLE [Recipient] (
+  [Recipient_ID] int,
+  [Full_Name] varchar(25),
+  [Address] varchar(50),
+  [Age] tinyint,
+  [Gender] bit,
+  [Blood_Type] varchar(5),
+  [Phone] varchar(10),
+  [Registration_date] datetime,
+  PRIMARY KEY ([Recipient_ID])
+);
+
+CREATE TABLE [Blood Transfusion Procedure] (
+  [Procedure_ID] int,
+  [Recipient_ID] int,
+  [Hospital_ID] int,
+  [Procedure_date]   datetime,
+  [Quantity] varchar(10),
+  PRIMARY KEY ([Procedure_ID])
+);
+
+CREATE TABLE [Donation] (
+  [donation_ID] int,
+  [Donor_ID] int,
+  [Donation_center_ID] int,
+  PRIMARY KEY ([donation_ID])
+);
+
+CREATE TABLE [Donor] (
+  [Donor_ID] int,
+  [Full_Name] varchar(25),
+  [Address] varchar(50),
+  [Age] tinyint,
+  [Gender] bit,
+  [Blood_Type] varchar(5),
+  [Phone] varchar(10),
+  [Last_Donation _Date] datetime,
+  PRIMARY KEY ([Donor_ID])
+);
+
+CREATE TABLE [Hospital] (
+  [Hospital_ID] int,
+  [Name] varchar(25),
+  [Location] varchar(50),
+  [E-mail] varchar(50),
+  [Phone] varchar(10),
+  [Website] varchar(50),
+  PRIMARY KEY ([Hospital_ID])
+);
+
+CREATE TABLE [Blood_Bank] (
+  [Blood_bank_ID] int,
+  [Location] varchar(50),
+  [E-mail] varchar(50),
+  [Phone] varchar(10),
+  [Website] varchar(50),
+  PRIMARY KEY ([Blood_bank_ID])
+);
+
+CREATE TABLE [Transportation Process (1)] (
+  [Transportation_ID] int,
+  [Donation_center_ID] int,
+  [Blood_bank_ID] int,
+  [Transportation_date] datetime,
+  [Units_of_whole_blood] int,
+  PRIMARY KEY ([Transportation_ID])
+);
+
+CREATE TABLE [Transportation Process (2)] (
+  [Transportation_ID] int,
+  [Blood_bank_ID] int,
+  [Hospital_ID] int,
+  [Transportation_date] datetime,
+  [Units_of_whole_blood] int,
+  PRIMARY KEY ([Transportation_ID])
+);

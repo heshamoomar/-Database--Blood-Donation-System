@@ -1,0 +1,70 @@
+CREATE DATABASE BLOOD_DONATION_SYSTEM_DATABASE_PROJECT;
+CREATE TABLE [_Donation_Center] (
+  [Donation_center_ID] int,
+  [Location] varchar(50),
+  [E-mail] varchar(50),
+  [Phone] varchar(10),
+  [Website] varchar(50),
+  PRIMARY KEY ([Donation_center_ID])
+);
+
+CREATE TABLE [_Recipient] (
+  [Recipient_ID] int,
+  [Full_Name] varchar(25),
+  [Address] varchar(50),
+  [Age]   tinyint,
+  [Gender] bit,
+  [Blood_Type] varchar(5),
+  [Phone] varchar(10),
+  [Registration_date]   datetime,
+  PRIMARY KEY ([Recipient_ID])
+);
+
+CREATE TABLE [_Request] (
+  [Reqest_Number] int,
+  [Recipient_ID] int,
+  [Hospital_ID] int,
+  [Request_date]   datetime,
+  [Required_blood] varchar(5),
+  [Quantity] varchar(10),
+  PRIMARY KEY ([Reqest_Number])
+);
+
+CREATE TABLE [_Donation] (
+  [donation_ID] int,
+  [Donor_ID] int,
+  [Blood_Type] varchar(5),
+  [Quantity] varchar(10),
+  PRIMARY KEY ([donation_ID])
+);
+
+CREATE TABLE [_Donor] (
+  [Donor_ID] int,
+  [Full_Name] varchar(25),
+  [Address] varchar(50),
+  [Age]   tinyint,
+  [Gender] bit,
+  [Blood_Type] varchar(5),
+  [Phone] varchar(10),
+  [Last_Donation _Date]   datetime,
+  PRIMARY KEY ([Donor_ID])
+);
+
+CREATE TABLE [_Hospital] (
+  [Hospital_ID] int,
+  [Name] varchar(25),
+  [Location] varchar(50),
+  [E-mail] varchar(50),
+  [Phone] varchar(10),
+  [Website] varchar(50),
+  PRIMARY KEY ([Hospital_ID])
+);
+
+CREATE TABLE [_Blood_Bank] (
+  [Blood_bank_ID] int,
+  [Location] varchar(50),
+  [E-mail] varchar(50),
+  [Phone] varchar(10),
+  [Website] varchar(50),
+  PRIMARY KEY ([Blood_bank_ID])
+);
